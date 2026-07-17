@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>靠北伸中 - 匿名投稿</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>靠北伸中</h1>
+<p>匿名投稿平台</p>
+</header>
+
+
+<main>
+
+<div class="card">
+
+<h2>匿名投稿</h2>
+
+<textarea 
+id="message"
+placeholder="輸入你想投稿的內容..."
+></textarea>
+
+<button onclick="sendPost()">
+送出投稿
+</button>
+
+<p id="status"></p>
+
+</div>
+
+
+<div class="card">
+
+<h2>相關連結</h2>
+
+<a href="https://你的學校網站網址" target="_blank">
+🏫 前往學校網站
+</a>
+
+</div>
+
+
+</main>
+
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="firebase.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>
