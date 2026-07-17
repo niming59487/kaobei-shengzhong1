@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>靠北伸中 - 管理後台</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>管理後台</h1>
+
+<p>匿名投稿查看</p>
+
+</header>
+
+
+
+<main>
+
+<div class="card">
+
+<h2>投稿列表</h2>
+
+<div id="posts">
+
+載入中...
+
+</div>
+
+
+</div>
+
+
+</main>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+
+<script src="firebase.js"></script>
+
+
+<script>
+
+const postsDiv = document.getElementById("posts");
+
+
+db.collection("posts")
+.orderBy("time","desc")
+.onSnapshot((snapshot)=>{
+
+
+postsDiv.innerHTML="";
+
+
+snapshot.forEach((doc)=>{
+
+
+let data = doc.data();
+
+
+postsDiv.innerHTML += `
+
+<div class="card">
+
+<p>${data.content}</p>
+
+<button onclick="deletePost('${doc.id}')">
+刪除
+</button>
+
+
+</div>
+
+`;
+
+
+});
+
+
+});
+
+
+
+function deletePost(id){
+
+
+db.collection("posts")
+.doc(id)
+.delete();
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
