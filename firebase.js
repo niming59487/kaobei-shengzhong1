@@ -1,5 +1,21 @@
+// Firebase 設定
+
 const firebaseConfig = {
-  apiKey: "填你的API_KEY",
-  authDomain: "填你的AUTH_DOMAIN",
-  projectId: "填你的PROJECT_ID"
+  apiKey: "AIzaSyAcAZTR_3NOpFdePiuYtrT0Bach-U8Dnoc",
+  authDomain: "kaobei-shenzhong.firebaseapp.com",
+  projectId: "kaobei-shenzhong",
+  storageBucket: "kaobei-shenzhong.firebasestorage.app",
+  messagingSenderId: "26114861390",
+  appId: "1:26114861390:web:6a77ac8787b2e3036c961f",
+  measurementId: "G-M6H84Q5LVV"
 };
+
+
+// 初始化 Firebase
+
+firebase.initializeApp(firebaseConfig);
+
+
+// 連接 Firestore
+
+const db = firebase.firestore();
